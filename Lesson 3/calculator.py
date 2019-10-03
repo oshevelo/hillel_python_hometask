@@ -27,7 +27,7 @@ def calc_core(expression):
     while '-' in expression:
         expression = operations.calc_sub(expression)
     if type(expression[0]) == date:
-        return expression[0].strftime("%d.%m.%Y")
+        return expression[0].strftime("%d.%m.%Y")#FIXME: test
     return expression[0]
 
 
