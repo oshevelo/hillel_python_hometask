@@ -7,7 +7,7 @@ def calc_substitute(expression_str):
     Делает замену '**' на одинарный знак '^'
     """
     expression_str = expression_str.replace('**', '^')
-    expression_str = expression_str.replace('pi', '3.14')
+    expression_str = expression_str.replace('pi', '3.14')#FIXME: use math.pi math.e
     expression_str = expression_str.replace('e', '2.71')
     return expression_str
 
@@ -26,7 +26,7 @@ def calc_parser(expression_str):
         if i.isdigit() or i == '.':
             accumulator += i
         elif i in available:
-            if accumulator:
+            if accumulator:#FIXME: seems it will break if 123(123+2)
                 a = accumulator.split('.')
                 if len(a) == 1:
                     expression.append(int(accumulator))
